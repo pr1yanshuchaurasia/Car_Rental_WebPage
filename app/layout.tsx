@@ -4,7 +4,7 @@ import { Footer, NavBar } from "@components";
 
 export const metadata = {
   title: "Car Hub",
-  description: "Discover world's best car showcase application",
+  description: "Discover world's best car in the world",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
