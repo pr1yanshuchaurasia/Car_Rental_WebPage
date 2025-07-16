@@ -1,10 +1,19 @@
+"use client";
 import image from "next/image";
+import { SearchManufacturer } from "@/components";
+
 
 const SearchBar = () => {
+    const handleSearch = ()=>{
+
+    }
   return (
-    <div>
-      
-    </div>
+    <form className="searchbar" onSubmit={handleSearch}>
+        <div className="searchbar__item">
+            <SearchManufacturer/>
+        </div>
+
+    </form>
   )
 }
 
