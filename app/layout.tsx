@@ -3,9 +3,10 @@ import {Footer , Navbar} from "@/components";
 
 
 export const metadata = {
-  title: "Car Hub",
+  title: "Prestige Wheels",
   description: "Discover world's best car in the world",
 };
+
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
