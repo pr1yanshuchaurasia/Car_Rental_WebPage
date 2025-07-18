@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Hero } from "@/components";
 import { SearchBar, CustomFilter } from "@/components";
 import { fetchCars } from "@/utils";
+import { CarCard } from "@/components";
 
 export default async function Home() {
   const allCars = await fetchCars(); 
