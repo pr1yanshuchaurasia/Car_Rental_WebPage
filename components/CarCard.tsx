@@ -4,24 +4,26 @@ import { CarProps } from "@/types";
 import Image from "next/image";
 import { useState } from "react";
 import { CustomButton } from "@/components";
+import { calculateCarRent } from "@/utils";
 
 interface CarCardProps {
   car: CarProps;
 }
 const CarCard = ({ car }: CarCardProps) => {
   const {
-    city_mpg,
-    combination_mpg,
-    cylinders,
-    displacement,
+    city_mpg,    
     drive,
-    fuel_type,
-    highway_mpg,
     make,
     model,
     transmission,
     year,
   } = car;
+
+  // const carRent = calculateCarRent(city_mpg, year);
+  // console.log("city_mpg:", city_mpg, "year:", year);
+  const carRent = calculateCarRent(Number(city_mpg) || 0, Number(year) || 2000);
+
+
   return (
     <div className="car-card group">
       <div className="car-card__content">
@@ -29,9 +31,13 @@ const CarCard = ({ car }: CarCardProps) => {
           {make} {model}
         </h2>
       </div>
-      <p>
-        <span>
-            Car Rent...
+      <p className="flex mt-6 text-[32px] font-extrabold">
+        <span className="self-start text-[14px] font-semibold">
+          $
+        </span>
+          {carRent}
+        <span className="self-end text-[14px] font-medium">
+            /day
         </span>
       </p>
     </div>
