@@ -4,6 +4,6 @@ const nextConfig: NextConfig = {
   images:{
     domains:['cdn.imagin.studio'],
   }
-};
+}
 
 export default nextConfig;
