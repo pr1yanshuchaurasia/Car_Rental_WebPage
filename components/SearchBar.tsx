@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { SearchManufacturer } from "@/components";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
   <button type="submit" className={`-ml-3 z-10 ${otherClasses}`}>
@@ -18,7 +18,13 @@ const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
 const SearchBar = () => {
   const [manufacturer, setManufacturer] = useState("");
   const [model, setModel] = useState("");
-  const handleSearch = () => {};
+  
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (manufacturer === "" && model === "") {
+      return alert("Please fill in the search bar");
+    }
+  };
   return (
     <form className="searchbar" onSubmit={handleSearch}>
       <div className="searchbar__item">
