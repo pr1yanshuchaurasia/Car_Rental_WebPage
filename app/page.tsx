@@ -7,7 +7,7 @@ import { manufacturers } from "@/constants";
 
 
 export default async function Home({ searchParams }) {
-  const allCars = await fetchCars({manufacturers: searchParams.manufacturers || '' ,
+  const allCars = await fetchCars({manufacturer: searchParams.manufacturer || '' ,
     year: searchParams.year || 2022,
     fuel: searchParams.fuel || '',
     limit: searchParams.limit || 10,
